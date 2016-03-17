@@ -1,0 +1,34 @@
+ 
+<h5> Appointments today [ 
+<%= Date.today %>] </h5>
+<% @posts.each do |post| %>
+
+  	<% if post.time.to_date == Date.today %>
+  	<h7><%= link_to post.appointment, post %></h7>
+
+<% end %>
+<% end %>
+
+
+
+
+<h5> Appointments This Week [ 
+<%= Date.today %> - <%=( (Date.today) + 6)%>] </h5>
+<% @posts.each do |post| %>
+
+  	<% if post.time.to_date <=( (Date.today) + 6)%>
+  	<h7><%= link_to post.appointment, post %></h7><br> <br>
+ 
+<% end %>
+<% end %>
+
+
+
+<h5> Total Appointments </h5>
+<% if @posts.present? %>
+   
+<% @posts.each do |post| %>
+	<h7><%= link_to post.appointment, post %></h7><br>
+				
+<% end %>
+<% end %>

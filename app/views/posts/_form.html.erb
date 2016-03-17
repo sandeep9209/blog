@@ -1,0 +1,30 @@
+<%= form_for @post do |f| %>
+<% if @post.errors.any? %>
+  <div id="errors">
+  	<h2><%= pluralize(@post.errors.count, "error") %> Prevented this post from saving </h2>
+  	<ul>
+  	 <% @post.errors.full_messages.each do |msg| %>
+  	 	<li> <%= msg %> </li>
+  	 <%end%>
+  	</ul>
+  </div>
+  <% end %>
+ <p>
+  <%= f.label :appointment %>
+  <%= f.text_field :appointment %>
+ </p>
+
+
+ <p>
+  <%= f.label :about %>
+  <%= f.text_field :about %>
+ </p>
+
+<p>
+  <%= f.label :date_and_time_of_appointment %>
+  <%= f.datetime_select :time %> </p>
+<p>
+<%= f.submit "create appointment" %>
+</p>
+
+ <% end %> 

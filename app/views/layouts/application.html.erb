@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Blog</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+     
+   <% if user_signed_in? %>
+
+	<div id="main_content">
+	 <div id="header">
+
+	 
+	  
+	  <% current_user.posts.all %> 
+     
+	 |<%= link_to "New Appointment", new_post_path %>
+
+	 |<%= link_to "Back to all Appointments ", posts_path %>
+
+	 |<%= link_to "Log Out", destroy_user_session_path, method: 'delete' %>
+
+	  </div>
+	 
+	
+		<% flash.each do |name, msg| %>
+			<%= content_tag(:div, msg, class: "alert") %>
+		<% end %>
+
+	 
+    <% end %>
+
+<%= yield %>
+ </div>
+</body>
+</html>

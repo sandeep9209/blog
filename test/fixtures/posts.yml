@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  appointment: MyString
+  about: MyText
+  time: 2016-03-15 13:33:22
+  posted_at: 2016-03-15 13:33:22
+
+two:
+  appointment: MyString
+  about: MyText
+  time: 2016-03-15 13:33:22
+  posted_at: 2016-03-15 13:33:22
